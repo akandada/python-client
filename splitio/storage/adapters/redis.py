@@ -325,7 +325,7 @@ def _build_default_client(config):  #pylint: disable=too-many-locals
     ssl_certfile = config.get('redisSslCertfile', None)
     ssl_cert_reqs = config.get('redisSslCertReqs', None)
     ssl_ca_certs = config.get('redisSslCaCerts', None)
-    max_connections = config.get('redisMaxConnections', None)
+    #max_connections = config.get('redisMaxConnections', None)
     prefix = config.get('redisPrefix')
 
     redis = StrictRedis(
@@ -350,7 +350,7 @@ def _build_default_client(config):  #pylint: disable=too-many-locals
         ssl_certfile=ssl_certfile,
         ssl_cert_reqs=ssl_cert_reqs,
         ssl_ca_certs=ssl_ca_certs,
-        max_connections=max_connections
+        #max_connections=max_connections
     )
     return RedisAdapter(redis, prefix=prefix)
 
